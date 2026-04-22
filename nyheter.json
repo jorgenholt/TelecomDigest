@@ -1,0 +1,73 @@
+{
+  "dato": "21. April 2026",
+  "ukedag": "Mandag",
+  "vol": "04",
+  "nr": "16",
+  "saker": [
+    {
+      "kilde": "NRK Norge",
+      "dato": "16. April 2026",
+      "headline": "Sikkerhetshull avslørte Telia-kunders posisjon",
+      "ingress": "En konfigurasjonsfeil i Telias nettverk gjorde det mulig å spore kunder med 100–200 meters nøyaktighet — uten deres samtykke.",
+      "body": [
+        "Et sikkerhetshull i Telias norske mobilnett har gjort det mulig for tredjeparter å hente ut posisjonsdata knyttet til enkeltkunders SIM-kort. Ifølge NRKs gjennomgang skal hullet ha vært aktivt i en ukjent periode, og ble oppdaget etter at en ekstern sikkerhetsforsker varslet selskapet.",
+        "Feilen skal ha oppstått som følge av en konfigurasjonsendring i nettverkets signaleringslag — det såkalte SS7-protokollsettet, som er kjent for å ha strukturelle svakheter. Telia bekreftet overfor NRK at de hadde iverksatt tiltak for å lukke hullet, men ga ikke opplysninger om hvor mange kunder som kan ha blitt berørt.",
+        "Datatilsynet opplyser at de følger saken, og at det kan være aktuelt med en formell vurdering av om Telia har overholdt sine GDPR-forpliktelser knyttet til dataminimering og sikker behandling av lokaliseringsdata."
+      ],
+      "sitat": "«En konfigurasjonsendring gjorde at Telia sendte ekstra informasjon som ikke burde vært tilgjengelig for tredjeparter — det er alvorlig når det gjelder posisjonsdata.»",
+      "relevans": "Setter spørsmål ved Telias interne sikkerhetskontroller og åpner for regulatorisk press fra Nasjonal sikkerhetsmyndighet. For norsk telecom bredere sett er dette en påminnelse om at SS7-sårbarhetene ikke er løst — og at infrastruktur-tillit er et konkurransefortrinn som kan tapes raskt."
+    },
+    {
+      "kilde": "GlobeNewswire",
+      "dato": "17. April 2026",
+      "headline": "Orange, Bouygues og Free kjøper SFR for 20 mrd euro",
+      "ingress": "Tre av Frankrikes fire store mobiloperatører slår seg sammen for å dele opp og absorbere den fjerde. Europas største telecom-transaksjon på et tiår.",
+      "body": [
+        "I en koordinert budrunde har Orange, Bouygues Telecom og Iliad (Free) inngått en bindende avtale om å kjøpe SFR fra Altice Europe for totalt €20,35 milliarder. Kjøpet struktureres som en deling av SFRs kundemasse og infrastruktur mellom de tre aktørene, etter godkjenning fra EU-kommisjonens konkurransemyndigheter.",
+        "Transaksjonen har lenge vært forventet i bransjen etter at Altice-grunnlegger Patrick Drahi signaliserte vilje til å selge seg ned i europeiske eiendeler. Analytikere peker på at den franske telecom-sektoren lenge har hatt for lav inntjening per aktør, og at en konsolidering fra fire til tre store spillere gir bedre investeringskapasitet for 5G og fiber.",
+        "EU-godkjenning er ikke gitt, og kommisjonen forventes å kreve strukturelle remedies — sannsynligvis salg av frekvenser eller infrastruktur til nye aktører — som vilkår for å gi grønt lys."
+      ],
+      "sitat": "«Transaksjonen reflekterer en total enterprise value på €20,35 milliarder, og understreker at det franske markedet ikke lenger er bærekraftig med fire likeverdige aktører.»",
+      "relevans": "Signaliserer at europeisk konsolidering akselererer på alvor. I et marked der Telenor og Telia allerede dominerer, kan denne typen deal inspirere til nye strukturelle grep i Norden. Norske MVNO-aktører og fiber-selskaper kan bli mer attraktive som oppkjøpsmål i kjølvannet."
+    },
+    {
+      "kilde": "EU Digital Networks Act",
+      "dato": "2026",
+      "headline": "EU krever full fiber innen 2035",
+      "ingress": "Digital Networks Act setter bindende krav til fiber-dekning i alle EU-land — med nasjonal plan-frist i 2029 og full dekning i 2035.",
+      "body": [
+        "EU-kommisjonens nye Digital Networks Act trer i kraft i 2026 og setter en klar tidslinje for fiber-overgangen i alle 27 medlemsland. Loven erstatter tidligere anbefalinger med juridisk bindende krav: innen 2029 skal hvert land ha presentert en nasjonal fiber-plan med konkrete milepæler, og innen 2035 skal alle husholdninger ha tilgang til gigabit-kapabel infrastruktur.",
+        "Loven inkluderer også krav om åpen infrastrukturtilgang, slik at mindre ISP-er kan leie kapasitet på nett bygget med offentlig støtte. Dette er ment å forhindre at konsolidering skaper ny monopolisering på siste-mil-leddet.",
+        "EØS-avtalen gjør at Norge formelt ikke er direkte bundet av EU-forordninger, men i praksis vil norske myndigheter og operatører tilpasse seg regelverket for å sikre investeringskapital fra europeiske fond og unngå regulatorisk fragmentering mot EU-markedet."
+      ],
+      "sitat": "«Innen 2029 må hver medlemsstat presentere en nasjonal plan for fiber-overgang — med bindende milepæler, finansieringsplan og tilsynsmekanismer.»",
+      "relevans": "Fiber blir regulatorisk prioritet i Europa. Norske fiber-operatører som Lyse, GlobalConnect og Telenor kan bruke dette som argument overfor Kommunal- og distriktsdepartementet for økt statlig medfinansiering av utbygging i grisgrendte strøk."
+    },
+    {
+      "kilde": "RCR Wireless",
+      "dato": "2. Mars 2026",
+      "headline": "Deutsche Telekom legger til 1M fiber-husstander",
+      "ingress": "Europas største telecom-selskap akselererer fiber-utbyggingen og planlegger å nå over 1 million nye husstander i 2026 alene.",
+      "body": [
+        "Deutsche Telekom bekreftet i sin Q4 2025-rapport at selskapet vil legge til over 1 million fiber-tilknyttede husstander i løpet av 2026, og at fiber nå utgjør kjernen i selskapets infrastrukturstrategi fremover. Selskapet bruker en kombinasjon av egne graveprosjekter og joint ventures med kommunale aktører for å nå tempoet.",
+        "En sentral driver er at Deutsche Telekom har signert langsiktige grossistavtaler med en rekke tyske ISP-er som sikrer inntjening på infrastrukturen uten at selskapet selv trenger å ta alle sluttkundene. Denne modellen — kalt open-access fiber — diskuteres nå også i Skandinavia som et alternativ til vinner-tar-alt-dynamikken i fiber-markedet.",
+        "Analytikere hos Barclays peker på at Deutsche Telekoms ARPU på fiber-kunder er 23 % høyere enn på kobberkunder, noe som gir sterk inntjenings-insentiv for akselerasjon."
+      ],
+      "sitat": "«Deutsche Telekom vil legge til over 1 million fiber-husstander i 2026 — og er nå den raskeste fiber-utbyggeren blant Europas integrerte telecom-selskaper.»",
+      "relevans": "Europeisk fokus skifter definitivt til fiber. Telenor og Telia møter press for å matche hastigheten. Open-access-modellen Deutsche Telekom benytter kan bli et template for norsk regulatorisk debatt om fiber-infrastruktur-tilgang."
+    },
+    {
+      "kilde": "Telenor ASA",
+      "dato": "14. April 2026",
+      "headline": "Telenor: 90 % 5G-dekning av norsk befolkning innen 2027",
+      "ingress": "Telenor offentliggjorde oppdatert 5G-veikart og bekrefter at norsk befolkningsdekning skal nå 90 % innen utgangen av 2027 — to år foran opprinnelig plan.",
+      "body": [
+        "På en investorpresentasjon i Oslo tirsdag la Telenor Norge frem en revidert 5G-utrullingsplan som fremskynder målene med to år. Selskapet pekte på at kombinasjonen av lav-band 5G (700 MHz) for bred dekning og mid-band (3,5 GHz) for kapasitet i byene gjør det mulig å nå 90 % befolkningsdekning innen Q4 2027 — mot tidligere kommuniserte 2029.",
+        "Fremskyndingen er delvis drevet av to faktorer: fallende utstyrspriser for 5G-basestasjoner etter at Ericsson og Nokia har skalert produksjon, og Nkom-regulering som pålegger operatørene å levere spesifiserte dekningsgrader i tildelte frekvensbånd.",
+        "Telia Norge, som er Telenors primære konkurrent på 5G, har foreløpig ikke oppdatert sine egne mål, men bransjekilder peker på at et mye-deknings-kappløp nå er i gang. For sluttbrukere betyr dette at rask 5G i distriktene kan komme tidligere enn forventet."
+      ],
+      "sitat": "«Vi fremskynder utrullingsplanen fordi teknologien og rammebetingelsene nå gjør det mulig å levere dette to år tidligere enn forutsatt — det er bra for kundene og bra for norsk digital infrastruktur.»",
+      "relevans": "Direkte relevant for alle aktører som bygger tjenester på norsk mobilinfrastruktur: IoT-selskaper, kommuner med smarte løsninger, og bedriftsmarkedet. Kappløpet mellom Telenor og Telia betyr at dekningsgap i distriktene kan lukkes raskere enn noen gang tidligere."
+    }
+  ]
+}

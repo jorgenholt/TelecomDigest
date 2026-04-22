@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELECOM DIGEST</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --red: #C8102E;
+    --black: #111111;
+    --white: #FAFAF8;
+    --ink: #1C1C1C;
+    --muted: #888;
+    --rule: #E0DDD8;
+    --bg-story: #F5F4F1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #E8E6E1;
+    font-family: 'Lora', Georgia, serif;
+    color: var(--ink);
+  }
+
+  .email-wrap {
+    max-width: 620px;
+    margin: 32px auto;
+    background: var(--white);
+  }
+
+  /* ── HEADER ── */
+  .hdr {
+    padding: 32px 40px 24px;
+    border-bottom: 2px solid var(--black);
+  }
+
+  .hdr-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .masthead {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--black);
+    line-height: 1;
+  }
+
+  .masthead em {
+    color: var(--red);
+    font-style: normal;
+  }
+
+  .hdr-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  .hdr-rule {
+    height: 1px;
+    background: var(--rule);
+    margin: 16px 0;
+  }
+
+  .hdr-tagline {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── INDEX ── */
+  .index {
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg-story);
+  }
+
+  .index-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .index-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .index-list li {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    gap: 10px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  .index-list li .n {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--red);
+    padding-top: 2px;
+  }
+
+  /* ── STORIES ── */
+  .story {
+    padding: 32px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .story:last-of-type {
+    border-bottom: 2px solid var(--black);
+  }
+
+  .story-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .story-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .story-dot {
+    width: 3px;
+    height: 3px;
+    background: var(--rule);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .story-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .story-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--rule);
+    margin-left: auto;
+  }
+
+  .story h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 10px;
+    text-wrap: pretty;
+  }
+
+  .story-deck {
+    font-size: 14.5px;
+    font-style: italic;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .story-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #333;
+    margin-bottom: 18px;
+  }
+
+  .story-body p + p {
+    margin-top: 12px;
+  }
+
+  .story-quote {
+    margin: 18px 0;
+    padding: 14px 18px;
+    border-left: 2px solid var(--red);
+    background: var(--bg-story);
+  }
+
+  .story-quote p {
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .story-relevance {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .relevance-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--black);
+    padding: 4px 8px;
+    white-space: nowrap;
+    margin-top: 1px;
+  }
+
+  .relevance-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 24px 40px 32px;
+    background: var(--black);
+    color: #666;
+  }
+
+  .footer-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #222;
+  }
+
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #F5F4F1;
+  }
+
+  .footer-logo em {
+    color: var(--red);
+    font-style: normal;
+  }
+
+  .footer-edition {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: #444;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  .footer-sources {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 14px;
+  }
+
+  .footer-sources strong { color: #666; font-weight: 400; }
+
+  .footer-disclaimer {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.06em;
+    color: #333;
+    line-height: 1.8;
+    border-top: 1px solid #1A1A1A;
+    padding-top: 14px;
+  }
+
+  /* ── LOADING STATE ── */
+  .loading {
+    padding: 80px 40px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .error {
+    padding: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    border: 1px solid var(--red);
+    margin: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="email-wrap" id="app">
+  <div class="loading">Laster nyheter…</div>
+</div>
+
+<script>
+async function render(data) {
+  const app = document.getElementById('app');
+
+  // Index items
+  const indexItems = data.saker.map((s, i) => `
+    <li>
+      <span class="n">${String(i+1).padStart(2,'0')}</span>
+      <span>${s.headline}</span>
+    </li>
+  `).join('');
+
+  // Stories
+  const stories = data.saker.map((s, i) => `
+    <article class="story">
+      <div class="story-meta">
+        <span class="story-source">${s.kilde}</span>
+        <span class="story-dot"></span>
+        <span class="story-date">${s.dato}</span>
+        <span class="story-num">${String(i+1).padStart(2,'0')} / ${String(data.saker.length).padStart(2,'0')}</span>
+      </div>
+      <h2>${s.headline}</h2>
+      <p class="story-deck">${s.ingress}</p>
+      <div class="story-body">
+        ${s.body.map(p => `<p>${p}</p>`).join('')}
+      </div>
+      <div class="story-quote"><p>${s.sitat}</p></div>
+      <div class="story-relevance">
+        <span class="relevance-pill">Norsk relevans</span>
+        <p class="relevance-text">${s.relevans}</p>
+      </div>
+    </article>
+  `).join('');
+
+  // Sources list
+  const sources = [...new Set(data.saker.map(s => s.kilde))].join(' · ');
+
+  app.innerHTML = `
+    <header class="hdr">
+      <div class="hdr-top">
+        <div class="masthead">TELECOM<em>DIGEST</em></div>
+        <div class="hdr-date">
+          ${data.ukedag}<br>
+          ${data.dato}<br>
+          Vol. ${data.vol} — Nr. ${data.nr}
+        </div>
+      </div>
+      <div class="hdr-rule"></div>
+      <p class="hdr-tagline">Dagens viktigste telecom-nyheter.</p>
+    </header>
+
+    <nav class="index">
+      <span class="index-label">// Denne utgaven</span>
+      <ol class="index-list">${indexItems}</ol>
+    </nav>
+
+    ${stories}
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-logo">TELECOM<em>DIGEST</em></div>
+        <div class="footer-edition">
+          Daglig utgave<br>
+          ${data.dato}
+        </div>
+      </div>
+      <div class="footer-sources">
+        <strong>Kilder:</strong> ${sources}
+      </div>
+      <div class="footer-disclaimer">
+        Dette nyhetsbrevet er en redaksjonell sammenstilling av publiserte nyhetsartikler og pressemeldinger. Alle sitater er hentet direkte fra originalkildene og er ikke verifisert selvstendig. Telecom Digest er ikke tilknyttet noen av de omtalte selskapene. Innholdet er ment som informasjon, ikke investerings- eller forretningsrådgivning.
+      </div>
+    </footer>
+  `;
+
+  document.title = `TELECOM DIGEST — ${data.dato}`;
+}
+
+async function load() {
+  try {
+    const res = await fetch('nyheter.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    await render(data);
+  } catch (err) {
+    document.getElementById('app').innerHTML = `
+      <div class="error">
+        Kunne ikke laste nyheter.json.<br><br>
+        Kjør scriptet: <strong>python generate_nyheter.py</strong><br><br>
+        Feil: ${err.message}
+      </div>
+    `;
+  }
+}
+
+load();
+</script>
+
+</body>
+</html>
