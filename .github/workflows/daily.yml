@@ -1,0 +1,63 @@
+# .github/workflows/daily.yml
+# ─────────────────────────────────────────────────────────────────
+# Kjører generate_nyheter.py hver morgen kl. 06:00 norsk tid (05:00 UTC),
+# committer nyheter.json og sender nyhetsbrevet via SendGrid.
+#
+# Secrets som må settes i GitHub → Settings → Secrets and variables → Actions:
+#   ANTHROPIC_API_KEY   — Anthropic API-nøkkel
+#   SENDGRID_API_KEY    — SendGrid API-nøkkel (valgfritt, se steg 4)
+#   SENDGRID_FROM       — avsender-e-post verifisert i SendGrid
+#   SENDGRID_TO         — mottaker-e-post(er), kommaseparert
+# ─────────────────────────────────────────────────────────────────
+
+name: Telecom Digest — Daglig utgave
+
+on:
+  schedule:
+    - cron: "0 5 * * 1-5"   # 06:00 norsk tid (CET), mandag–fredag
+  workflow_dispatch:          # Kan kjøres manuelt fra GitHub Actions-fanen
+
+jobs:
+  generer-og-send:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Hent kodebasen
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # 2. Sett opp Python
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 3. Installer avhengigheter
+      - name: Installer avhengigheter
+        run: pip install anthropic sendgrid
+
+      # 4. Generer nyheter.json via Claude
+      - name: Generer nyheter med Claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python generate_nyheter.py
+
+      # 5. Commit og push nyheter.json tilbake til repoet
+      #    (slik at GitHub Pages alltid viser siste utgave)
+      - name: Commit nyheter.json
+        run: |
+          git config user.name  "Telecom Digest Bot"
+          git config user.email "bot@telecomdigest.no"
+          git add nyheter.json
+          git diff --staged --quiet || git commit -m "📰 Daglig utgave $(date +'%d.%m.%Y')"
+          git push
+
+      # 6. (Valgfritt) Send nyhetsbrevet på e-post via SendGrid
+      #    Fjern kommentarene under hvis du vil aktivere e-postutsendelse
+      #
+      # - name: Send nyhetsbrev på e-post
+      #   env:
+      #     SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+      #     SENDGRID_FROM:    ${{ secrets.SENDGRID_FROM }}
+      #     SENDGRID_TO:      ${{ secrets.SENDGRID_TO }}
+      #   run: python send_email.py
